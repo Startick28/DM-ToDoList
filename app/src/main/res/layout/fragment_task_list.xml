@@ -7,6 +7,34 @@
     tools:context=".tasklist.TaskListFragment">
 
 
+    <TextView
+        android:id="@+id/userInfoTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#00BCD4"
+        android:padding="6dp"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userIcon"
+        app:layout_constraintEnd_toStartOf="@+id/userIcon"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/userIcon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="#00BCD4"
+        android:padding="2dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#002E2A" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_main_recycler_view"
         android:layout_width="0dp"
@@ -15,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/userInfoTextView" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -28,6 +56,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/fragment_main_recycler_view"
         app:layout_constraintEnd_toEndOf="@+id/fragment_main_recycler_view"
         app:tint="@color/white"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/DM-ToDoList/app/src/main/res/drawable/ic_baseline_delete_12.xml" value="0.3828125" />
+        <entry key="..\:/AndroidProjects/DM-ToDoList/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.3828125" />
+        <entry key="..\:/AndroidProjects/DM-ToDoList/app/src/main/res/layout/activity_form.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/DM-ToDoList/app/src/main/res/layout/activity_main.xml" value="0.23802083333333332" />
-        <entry key="..\:/AndroidProjects/DM-ToDoList/app/src/main/res/layout/fragment_task_list.xml" value="0.23802083333333332" />
+        <entry key="..\:/AndroidProjects/DM-ToDoList/app/src/main/res/layout/fragment_task_list.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/DM-ToDoList/app/src/main/res/layout/item_task.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidProjects/DM/app/src/main/res/layout/activity_main.xml" value="0.3451086956521739" />
         <entry key="..\:/AndroidProjects/DM/app/src/main/res/layout/fragment_task_list.xml" value="0.3451086956521739" />

@@ -3,13 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
 
-        android:id="@+id/linearLayout"
+        android:id="@+id/task_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:longClickable="true"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +25,14 @@
             <TextView
                 android:id="@+id/task_title"
                 android:layout_width="match_parent"
-                android:layout_height="76dp"
+                android:layout_height="wrap_content"
                 android:background="@android:color/holo_blue_bright"
-                android:padding="5dp"
-                android:text=""
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="70dp"
+                android:paddingBottom="10dp"
                 android:textColor="@color/black"
-                android:textSize="40sp"
+                android:textSize="35sp"
                 android:textStyle="bold"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -37,30 +42,63 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/delete_task_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:baselineAlignBottom="true"
                 android:clickable="true"
+                android:contentDescription="@string/cool"
+                android:focusable="true"
+                app:borderWidth="0dp"
+                app:fabCustomSize="35dp"
                 app:layout_constraintBottom_toBottomOf="@+id/task_title"
                 app:layout_constraintEnd_toEndOf="@+id/task_title"
                 app:layout_constraintTop_toTopOf="@+id/task_title"
-                app:srcCompat="@android:drawable/ic_menu_delete"
-                tools:ignore="SpeakableTextPresentCheck"
-                android:focusable="true" />
+                app:maxImageSize="25dp"
+                app:srcCompat="@drawable/ic_baseline_delete_24"
+                tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/task_description"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_light"
-            android:text=""
-            android:textColor="@color/black"
-            android:textSize="30sp" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/task_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:padding="15dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="70dp"
+                android:paddingBottom="15dp"
+                android:textColor="#1E1E1E"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_min="80dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/editTaskButton"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:contentDescription="@string/cool"
+                android:focusable="true"
+                app:backgroundTint="#FFFFFF"
+                app:fabCustomSize="35dp"
+                app:layout_constraintBottom_toBottomOf="@+id/task_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_baseline_edit_24"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
