@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.louzier.todo.databinding.FragmentTaskListBinding
@@ -21,17 +22,21 @@ import kotlinx.serialization.json.Json
 
 class TaskListFragment : Fragment() {
 
+    /*Avant le TP4
     private var taskList = listOf(
         Task(id = "id_1", title = "Task 1", description = "description 1"),
         Task(id = "id_2", title = "Task 2")
-    )
+    )*/
 
-    private val tasksRepository = TasksRepository()
+    private val taskListViewModel: TaskListViewModel by viewModels()
+
+    //Avant le TP4
+    //private val tasksRepository = TasksRepository()
 
     private val adapterListener = object : TaskListListener {
         override fun onClickDelete(task: Task) {
             lifecycleScope.launch {
-                tasksRepository.delete(task)
+                taskListViewModel.delete(task)
             }
             updateList()
         }
@@ -60,7 +65,9 @@ class TaskListFragment : Fragment() {
         val newTask = result.data?.getSerializableExtra("task") as Task
 
         lifecycleScope.launch {
-            tasksRepository.createOrUpdate(newTask)
+            // Avant le TP4
+            //tasksRepository.createOrUpdate(newTask)
+            taskListViewModel.createOrUpdate(newTask)
         }
 
         updateList()
@@ -69,7 +76,7 @@ class TaskListFragment : Fragment() {
     private fun updateList()
     {
         lifecycleScope.launch {
-            tasksRepository.taskList.collect { newList ->
+            taskListViewModel.taskList.collect { newList ->
                 adapter.submitList(newList)
             }
         }
@@ -144,7 +151,7 @@ class TaskListFragment : Fragment() {
             fragmentTaskListBinding.userInfoTextView.text = "${userInfo.firstName} ${userInfo.lastName}"
         }
         lifecycleScope.launch {
-            tasksRepository.refresh() // on demande de rafraîchir les données sans attendre le retour directement
+            taskListViewModel.refresh() // on demande de rafraîchir les données sans attendre le retour directement
         }
     }
 

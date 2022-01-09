@@ -13,11 +13,5 @@ a
 1app/src/main/java/com/louzier/todo/network/Api.kt,6\c\6c29f3e5fb83a489fef9d290a33ad4b4ae6a1b86
 f
 6app/src/main/java/com/louzier/todo/network/UserInfo.kt,7\7\77225fa1adda5d9c0d486999a503823a2ebf9cfb
-l
-<app/src/main/java/com/louzier/todo/network/TaskWebService.kt,c\7\c7a765df212489248f7da448fda131dfa8a6203c
-m
-=app/src/main/java/com/louzier/todo/network/TasksRepository.kt,8\0\8052cc204b7679a85e31ab2823c26af7486b8b92
-o
-?app/src/main/java/com/louzier/todo/tasklist/TaskListFragment.kt,b\7\b7592e43b73b26b957ace421c5beb65b306be16f
 n
 >app/src/main/java/com/louzier/todo/tasklist/TaskListAdapter.kt,3\7\370bfa9e190fd6e5e59c746a826d2c06dfc1a6ad
