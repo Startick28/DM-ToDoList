@@ -36,6 +36,8 @@ class TaskListFragment : Fragment() {
     private val adapterListener = object : TaskListListener {
         override fun onClickDelete(task: Task) {
             lifecycleScope.launch {
+                // Avant le TP4
+                //tasksRepository.delete(task)
                 taskListViewModel.delete(task)
             }
             updateList()
@@ -76,6 +78,10 @@ class TaskListFragment : Fragment() {
     private fun updateList()
     {
         lifecycleScope.launch {
+            // Avant le TP4
+            //tasksRepository.taskList.collect { newList ->
+            //                adapter.submitList(newList)
+            //            }
             taskListViewModel.taskList.collect { newList ->
                 adapter.submitList(newList)
             }
@@ -151,6 +157,8 @@ class TaskListFragment : Fragment() {
             fragmentTaskListBinding.userInfoTextView.text = "${userInfo.firstName} ${userInfo.lastName}"
         }
         lifecycleScope.launch {
+            // Avant le TP4
+            //tasksRepository.refresh()
             taskListViewModel.refresh() // on demande de rafraîchir les données sans attendre le retour directement
         }
     }
